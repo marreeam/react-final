@@ -1,0 +1,46 @@
+// ============================================================
+//  Design tokens — spacing, radius, typography, breakpoints
+//  Colors are handled as CSS custom properties in _themes.scss
+//  so they can switch at runtime (light / dark mode).
+// ============================================================
+
+// Spacing scale (based on a 4px grid)
+$space-2xs: 0.25rem; //  4px
+$space-xs: 0.5rem; //  8px
+$space-sm: 0.75rem; // 12px
+$space-md: 1rem; // 16px
+$space-lg: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-2xl: 3rem; // 48px
+$space-3xl: 4rem; // 64px
+
+// Border radius
+$radius-sm: 0.5rem;
+$radius-md: 0.875rem;
+$radius-lg: 1.25rem;
+$radius-full: 999px;
+
+// Typography
+$font-sans:
+  'Poppins', 'Noto Sans Georgian', 'Segoe UI', system-ui, -apple-system,
+  sans-serif;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+// Z-index layers
+$z-header: 100;
+$z-overlay: 900;
+$z-modal: 1000;
+$z-toast: 1100;
+
+// Responsive breakpoints (mobile-first)
+$bp-sm: 480px; // large phones
+$bp-md: 768px; // tablets
+$bp-lg: 1024px; // laptops
+$bp-xl: 1280px; // desktops
+
+// Layout
+$container-max: 1120px;
+$header-height: 4.5rem;

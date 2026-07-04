@@ -1,0 +1,181 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.summary {
+  @include card;
+  max-width: 34rem;
+  margin-inline: auto;
+  padding: $space-xl $space-lg;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: $space-md;
+
+  @include md {
+    padding: $space-2xl;
+  }
+}
+
+.bestBadge {
+  padding: $space-2xs $space-md;
+  border-radius: $radius-full;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  color: #fff;
+  font-weight: $fw-semibold;
+  font-size: 0.85rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.message {
+  font-size: 1.15rem;
+  font-weight: $fw-medium;
+  color: var(--color-primary);
+}
+
+.scoreRing {
+  @include flex-center;
+  flex-direction: column;
+  width: 10rem;
+  height: 10rem;
+  border-radius: $radius-full;
+  background: conic-gradient(
+    var(--color-primary) calc(var(--score, 0) * 1%),
+    var(--color-surface-alt) 0
+  );
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0.7rem;
+    border-radius: $radius-full;
+    background-color: var(--color-surface);
+  }
+}
+
+.scorePercent {
+  position: relative;
+  z-index: 1;
+  font-size: 2.25rem;
+  font-weight: $fw-bold;
+  color: var(--color-text);
+}
+
+.scoreLabel {
+  position: relative;
+  z-index: 1;
+  color: var(--color-text-muted);
+  font-weight: $fw-medium;
+}
+
+.stats {
+  display: flex;
+  gap: $space-xl;
+  justify-content: center;
+}
+
+.stat {
+  display: grid;
+  gap: $space-2xs;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: $fw-bold;
+  color: var(--color-text);
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  justify-content: center;
+  margin-top: $space-xs;
+}
+
+/* ---- Review ---- */
+.review {
+  max-width: 44rem;
+  margin: $space-2xl auto 0;
+}
+
+.reviewTitle {
+  margin-bottom: $space-lg;
+  text-align: center;
+}
+
+.reviewList {
+  display: grid;
+  gap: $space-md;
+}
+
+.reviewItem {
+  @include card;
+  padding: $space-md $space-lg;
+}
+
+.reviewHead {
+  display: flex;
+  gap: $space-sm;
+  align-items: flex-start;
+}
+
+.status {
+  @include flex-center;
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: $radius-full;
+  font-weight: $fw-bold;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.ok {
+  background-color: var(--color-success);
+}
+
+.bad {
+  background-color: var(--color-danger);
+}
+
+.reviewQuestion {
+  color: var(--color-text);
+  font-weight: $fw-medium;
+}
+
+.answers {
+  margin-top: $space-sm;
+  padding-left: calc(1.6rem + #{$space-sm});
+  display: grid;
+  gap: $space-2xs;
+}
+
+.answerRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-2xs;
+  font-size: 0.9rem;
+}
+
+.answerLabel {
+  color: var(--color-text-muted);
+}
+
+.correctText {
+  color: var(--color-success);
+  font-weight: $fw-medium;
+}
+
+.wrongText {
+  color: var(--color-danger);
+  font-weight: $fw-medium;
+}

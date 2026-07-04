@@ -1,0 +1,32 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.toggle {
+  @include flex-center;
+  @include focus-ring;
+  gap: $space-2xs;
+  height: 2.5rem;
+  padding-inline: $space-sm;
+  border-radius: $radius-full;
+  background-color: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  font-weight: $fw-semibold;
+  color: var(--color-text-muted);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-1px);
+  }
+}
+
+.active {
+  color: var(--color-primary);
+}
+
+.divider {
+  opacity: 0.5;
+}

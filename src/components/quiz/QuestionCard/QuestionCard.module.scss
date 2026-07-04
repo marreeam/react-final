@@ -1,0 +1,60 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.card {
+  @include card;
+  padding: $space-lg;
+
+  @include md {
+    padding: $space-xl;
+  }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-xs;
+  margin-bottom: $space-md;
+}
+
+.category,
+.difficulty {
+  padding: $space-2xs $space-sm;
+  border-radius: $radius-full;
+  font-size: 0.75rem;
+  font-weight: $fw-semibold;
+}
+
+.category {
+  background-color: var(--color-surface-alt);
+  color: var(--color-text-muted);
+}
+
+.difficulty {
+  text-transform: capitalize;
+}
+
+.easy {
+  background-color: var(--color-success-soft);
+  color: var(--color-success);
+}
+
+.medium {
+  background-color: color-mix(in srgb, var(--color-warning) 18%, transparent);
+  color: var(--color-warning);
+}
+
+.hard {
+  background-color: var(--color-danger-soft);
+  color: var(--color-danger);
+}
+
+.question {
+  font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+  margin-bottom: $space-lg;
+}
+
+.options {
+  display: grid;
+  gap: $space-sm;
+}

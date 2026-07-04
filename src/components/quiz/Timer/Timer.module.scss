@@ -1,0 +1,63 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.timer {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  @include flex-center;
+  flex-shrink: 0;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.bg {
+  fill: none;
+  stroke: var(--color-surface-alt);
+  stroke-width: 3;
+}
+
+.progress {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 100;
+  transition:
+    stroke-dashoffset 1s linear,
+    stroke 0.3s ease;
+}
+
+.value {
+  font-weight: $fw-bold;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+
+.urgent {
+  .progress {
+    stroke: var(--color-danger);
+  }
+
+  .value {
+    color: var(--color-danger);
+  }
+
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}

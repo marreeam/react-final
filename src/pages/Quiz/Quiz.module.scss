@@ -1,0 +1,58 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.quiz {
+  max-width: 44rem;
+  margin-inline: auto;
+  display: grid;
+  gap: $space-lg;
+}
+
+.topbar {
+  @include flex-between;
+  gap: $space-md;
+}
+
+.counter {
+  display: flex;
+  align-items: baseline;
+  gap: $space-2xs;
+}
+
+.current {
+  font-size: 1.75rem;
+  font-weight: $fw-bold;
+  color: var(--color-primary);
+}
+
+.total {
+  color: var(--color-text-muted);
+  font-weight: $fw-medium;
+}
+
+.footer {
+  margin-top: $space-xs;
+}
+
+/* ---- Error state ---- */
+.errorBox {
+  @include card;
+  max-width: 32rem;
+  margin-inline: auto;
+  padding: $space-2xl $space-xl;
+  text-align: center;
+  display: grid;
+  gap: $space-md;
+  justify-items: center;
+}
+
+.errorIcon {
+  font-size: 3rem;
+}
+
+.errorActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  justify-content: center;
+}

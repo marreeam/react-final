@@ -1,0 +1,76 @@
+@use 'variables' as *;
+
+// ---- Responsive helpers (min-width, mobile-first) ----
+@mixin sm {
+  @media (min-width: $bp-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: $bp-xl) {
+    @content;
+  }
+}
+
+// ---- Layout helpers ----
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: $space-md;
+
+  @include md {
+    padding-inline: $space-xl;
+  }
+}
+
+// ---- Surface card ----
+@mixin card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: $radius-lg;
+  box-shadow: var(--shadow-md);
+}
+
+// ---- Accessible focus ring ----
+@mixin focus-ring {
+  outline: none;
+
+  &:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+// ---- Truncate multiline text ----
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

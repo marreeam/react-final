@@ -1,0 +1,64 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  @include flex-center;
+  padding: $space-md;
+  background-color: rgba(8, 12, 22, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.dialog {
+  @include card;
+  width: 100%;
+  max-width: 26rem;
+  padding: $space-lg;
+  box-shadow: var(--shadow-lg);
+}
+
+.header {
+  @include flex-between;
+  gap: $space-md;
+  margin-bottom: $space-sm;
+}
+
+.title {
+  font-size: 1.25rem;
+}
+
+.closeBtn {
+  @include flex-center;
+  @include focus-ring;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-radius: $radius-full;
+  color: var(--color-text-muted);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-surface-alt);
+    color: var(--color-text);
+  }
+}
+
+.body {
+  color: var(--color-text-muted);
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: $space-sm;
+  margin-top: $space-lg;
+
+  @media (max-width: #{$bp-sm - 1px}) {
+    flex-direction: column-reverse;
+  }
+}

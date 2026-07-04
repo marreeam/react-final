@@ -1,0 +1,109 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.hero {
+  text-align: center;
+  padding-block: $space-2xl;
+  max-width: 42rem;
+  margin-inline: auto;
+
+  @include lg {
+    padding-block: $space-3xl;
+  }
+}
+
+.tagline {
+  display: inline-block;
+  padding: $space-2xs $space-md;
+  margin-bottom: $space-md;
+  border-radius: $radius-full;
+  background-color: var(--color-surface-alt);
+  color: var(--color-primary);
+  font-weight: $fw-semibold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  margin-bottom: $space-md;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-bottom: $space-xl;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  justify-content: center;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $space-md;
+  margin-top: $space-2xl;
+}
+
+.stat {
+  @include card;
+  padding: $space-md;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2xs;
+}
+
+.statValue {
+  font-size: 1.75rem;
+  font-weight: $fw-bold;
+  color: var(--color-primary);
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ---- Features ---- */
+.features {
+  margin-top: $space-2xl;
+}
+
+.featuresTitle {
+  text-align: center;
+  margin-bottom: $space-xl;
+}
+
+.featureGrid {
+  display: grid;
+  gap: $space-lg;
+  grid-template-columns: 1fr;
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature {
+  @include card;
+  padding: $space-xl;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  h3 {
+    margin-block: $space-sm $space-xs;
+  }
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
